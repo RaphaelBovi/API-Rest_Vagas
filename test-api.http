@@ -1,0 +1,170 @@
+### Teste 1: Criar currículo válido
+POST http://localhost:8080/api/curriculos
+Content-Type: application/json
+
+{
+  "nome": "João Silva",
+  "residencia": "São Paulo",
+  "dataNascimento": "1990-05-15",
+  "nivelEscolaridade": "Superior",
+  "cursosComplementares": [
+    {
+      "nome": "Java Avançado",
+      "instituicao": "Alura",
+      "cargaHoraria": 40
+    },
+    {
+      "nome": "Spring Boot",
+      "instituicao": "Udemy",
+      "cargaHoraria": 30
+    }
+  ],
+  "idiomas": [
+    {
+      "nome": "Inglês",
+      "nivel": "Avançado"
+    }
+  ],
+  "skills": [
+    {
+      "nome": "Java",
+      "nivel": "Avançado"
+    },
+    {
+      "nome": "Spring Boot",
+      "nivel": "Intermediário"
+    }
+  ]
+}
+
+### Teste 2: Criar currículo com mais de 15 cursos (deve falhar)
+POST http://localhost:8080/api/curriculos
+Content-Type: application/json
+
+{
+  "nome": "Maria Santos",
+  "residencia": "Rio de Janeiro",
+  "dataNascimento": "1985-03-20",
+  "nivelEscolaridade": "Superior",
+  "cursosComplementares": [
+    {"nome": "Curso 1", "instituicao": "Inst 1", "cargaHoraria": 10},
+    {"nome": "Curso 2", "instituicao": "Inst 2", "cargaHoraria": 10},
+    {"nome": "Curso 3", "instituicao": "Inst 3", "cargaHoraria": 10},
+    {"nome": "Curso 4", "instituicao": "Inst 4", "cargaHoraria": 10},
+    {"nome": "Curso 5", "instituicao": "Inst 5", "cargaHoraria": 10},
+    {"nome": "Curso 6", "instituicao": "Inst 6", "cargaHoraria": 10},
+    {"nome": "Curso 7", "instituicao": "Inst 7", "cargaHoraria": 10},
+    {"nome": "Curso 8", "instituicao": "Inst 8", "cargaHoraria": 10},
+    {"nome": "Curso 9", "instituicao": "Inst 9", "cargaHoraria": 10},
+    {"nome": "Curso 10", "instituicao": "Inst 10", "cargaHoraria": 10},
+    {"nome": "Curso 11", "instituicao": "Inst 11", "cargaHoraria": 10},
+    {"nome": "Curso 12", "instituicao": "Inst 12", "cargaHoraria": 10},
+    {"nome": "Curso 13", "instituicao": "Inst 13", "cargaHoraria": 10},
+    {"nome": "Curso 14", "instituicao": "Inst 14", "cargaHoraria": 10},
+    {"nome": "Curso 15", "instituicao": "Inst 15", "cargaHoraria": 10},
+    {"nome": "Curso 16", "instituicao": "Inst 16", "cargaHoraria": 10}
+  ],
+  "idiomas": [
+    {
+      "nome": "Inglês",
+      "nivel": "Intermediário"
+    }
+  ],
+  "skills": [
+    {
+      "nome": "Python",
+      "nivel": "Avançado"
+    }
+  ]
+}
+
+### Teste 3: Criar currículo sem skills (deve falhar)
+POST http://localhost:8080/api/curriculos
+Content-Type: application/json
+
+{
+  "nome": "Pedro Costa",
+  "residencia": "Belo Horizonte",
+  "dataNascimento": "1992-08-10",
+  "nivelEscolaridade": "Médio",
+  "cursosComplementares": [],
+  "idiomas": [],
+  "skills": []
+}
+
+### Teste 4: Criar currículo com data futura (deve falhar)
+POST http://localhost:8080/api/curriculos
+Content-Type: application/json
+
+{
+  "nome": "Ana Lima",
+  "residencia": "Curitiba",
+  "dataNascimento": "2030-01-01",
+  "nivelEscolaridade": "Superior",
+  "cursosComplementares": [],
+  "idiomas": [],
+  "skills": [
+    {
+      "nome": "JavaScript",
+      "nivel": "Avançado"
+    }
+  ]
+}
+
+### Teste 5: Buscar currículo por ID (substitua {id} pelo ID retornado no Teste 1)
+GET http://localhost:8080/api/curriculos/1
+
+### Teste 6: Buscar currículo inexistente (deve retornar 404)
+GET http://localhost:8080/api/curriculos/99999
+
+### Teste 7: Buscar vagas para um currículo (substitua {id} pelo ID retornado no Teste 1)
+GET http://localhost:8080/api/curriculos/1/vagas
+
+### Teste 8: Atualizar currículo (substitua {id} pelo ID retornado no Teste 1)
+PUT http://localhost:8080/api/curriculos/1
+Content-Type: application/json
+
+{
+  "nome": "João Silva Atualizado",
+  "residencia": "São Paulo",
+  "dataNascimento": "1990-05-15",
+  "nivelEscolaridade": "Superior Completo",
+  "cursosComplementares": [
+    {
+      "nome": "Java Avançado",
+      "instituicao": "Alura",
+      "cargaHoraria": 40
+    }
+  ],
+  "idiomas": [
+    {
+      "nome": "Inglês",
+      "nivel": "Fluente"
+    },
+    {
+      "nome": "Espanhol",
+      "nivel": "Intermediário"
+    }
+  ],
+  "skills": [
+    {
+      "nome": "Java",
+      "nivel": "Especialista"
+    },
+    {
+      "nome": "Spring Boot",
+      "nivel": "Avançado"
+    },
+    {
+      "nome": "Docker",
+      "nivel": "Intermediário"
+    }
+  ]
+}
+
+### Teste 9: Deletar currículo (substitua {id} pelo ID retornado no Teste 1)
+DELETE http://localhost:8080/api/curriculos/1
+
+### Teste 10: Tentar deletar currículo inexistente (deve retornar 404)
+DELETE http://localhost:8080/api/curriculos/99999
+

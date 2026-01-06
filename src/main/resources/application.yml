@@ -1,0 +1,23 @@
+server:
+  port: ${PORT:8080}
+
+spring:
+  datasource:
+    url: jdbc:postgresql://yamanote.proxy.rlwy.net:31314/railway
+    username: postgres
+    password: aKjTvGIzORJOMkbImZIUwPCXJWqnGyhD
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+
+adzuna:
+  api:
+    base-url: https://api.adzuna.com/v1/api/jobs/br/search/1
+    app-id: ${ADZUNA_APP_ID:your-app-id}
+    app-key: ${ADZUNA_APP_KEY:your-app-key}
+    timeout: 5000
