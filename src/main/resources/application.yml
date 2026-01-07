@@ -1,5 +1,5 @@
 server:
-  port: ${PORT:8080}
+  port: ${PORT:8080}  # Porta dinâmica do Railway em produção, 8080 para desenvolvimento local
 
 spring:
   profiles:
