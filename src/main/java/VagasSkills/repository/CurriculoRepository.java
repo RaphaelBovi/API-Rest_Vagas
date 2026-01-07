@@ -8,3 +8,4 @@ import org.springframework.stereotype.Repository;
 public interface CurriculoRepository extends JpaRepository<Curriculo, Long> {
 }
 
+

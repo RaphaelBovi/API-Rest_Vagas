@@ -1,0 +1,18 @@
+# Configuração para ambiente de desenvolvimento local
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/empregar_db
+    username: postgres
+    password: postgres
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+
+logging:
+  level:
+    root: INFO
+    VagasSkills: DEBUG
+    org.hibernate.SQL: DEBUG
+    org.hibernate.type.descriptor.sql.BasicBinder: TRACE
+

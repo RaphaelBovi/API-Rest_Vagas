@@ -11,3 +11,4 @@ public class MaxCursosExcedidoException extends IllegalArgumentException {
     }
 }
 
+

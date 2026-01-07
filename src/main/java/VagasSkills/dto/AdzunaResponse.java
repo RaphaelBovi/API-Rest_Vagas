@@ -14,3 +14,4 @@ public class AdzunaResponse {
     private Integer count;
 }
 
+

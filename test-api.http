@@ -168,3 +168,4 @@ DELETE http://localhost:8080/api/curriculos/1
 ### Teste 10: Tentar deletar currículo inexistente (deve retornar 404)
 DELETE http://localhost:8080/api/curriculos/99999
 
+

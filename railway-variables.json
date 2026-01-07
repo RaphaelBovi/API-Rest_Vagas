@@ -1,0 +1,24 @@
+{
+  "DATABASE_PUBLIC_URL": "postgresql://${{PGUSER}}:${{POSTGRES_PASSWORD}}@${{RAILWAY_TCP_PROXY_DOMAIN}}:${{RAILWAY_TCP_PROXY_PORT}}/${{PGDATABASE}}",
+  "DATABASE_URL": "jdbc:postgresql://postgres-production-e12e.up.railway.app:5432/railway",
+  "DATABASE_USERNAME": "postgres",
+  "DATABASE_PASSWORD": "RyzUTLHdHjIxlxlThzJbMsIxrPviUJlA",
+  "PGDATA": "/var/lib/postgresql/data/pgdata",
+  "PGDATABASE": "${{POSTGRES_DB}}",
+  "PGHOST": "${{RAILWAY_PRIVATE_DOMAIN}}",
+  "PGPASSWORD": "${{POSTGRES_PASSWORD}}",
+  "PGPORT": "5432",
+  "PGUSER": "${{POSTGRES_USER}}",
+  "POSTGRES_DB": "railway",
+  "POSTGRES_PASSWORD": "RyzUTLHdHjIxlxlThzJbMsIxrPviUJlA",
+  "POSTGRES_USER": "postgres",
+  "RAILWAY_DEPLOYMENT_DRAINING_SECONDS": "60",
+  "SPRING_PROFILES_ACTIVE": "prod",
+  "SSL_CERT_DAYS": "820",
+  "ADZUNA_APP_ID": "7723771c",
+  "ADZUNA_APP_KEY": "a4e84f857e72f1e171d605c4ef2c275f",
+  "ADZUNA_TIMEOUT": "5000",
+  "DDL_AUTO": "update",
+  "SHOW_SQL": "false"
+}
+
