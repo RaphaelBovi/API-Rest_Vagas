@@ -27,9 +27,22 @@ public class Curriculo {
     @Column(nullable = false)
     private String nivelEscolaridade;
     
+    private String nomeUniversidade; // Obrigatório se nível superior
+    
+    private String cargoDesejado;
+    
+    private java.math.BigDecimal pretensaoSalarial;
+    
+    private Boolean disponibilidadeMudanca = false;
+    
+    private Boolean disponibilidadeViagem = false;
+    
     @OneToMany(mappedBy = "curriculo", cascade = CascadeType.ALL, orphanRemoval = true)
     @Size(max = 15)
     private List<CursoComplementar> cursosComplementares = new ArrayList<>();
+    
+    @OneToMany(mappedBy = "curriculo", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Experiencia> experiencias = new ArrayList<>();
     
     @OneToMany(mappedBy = "curriculo", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Idioma> idiomas = new ArrayList<>();
@@ -37,5 +50,6 @@ public class Curriculo {
     @OneToMany(mappedBy = "curriculo", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Skill> skills = new ArrayList<>();
     
-    // getters, setters, constructors
+    @OneToMany(mappedBy = "curriculo", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Candidatura> candidaturas = new ArrayList<>();
 }

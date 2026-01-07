@@ -7,6 +7,7 @@ import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Past;
 import jakarta.validation.constraints.Size;
 import lombok.Data;
+import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -27,6 +28,16 @@ public class CurriculoRequestDTO {
     @NotBlank(message = "Nível de escolaridade é obrigatório")
     private String nivelEscolaridade;
     
+    private String nomeUniversidade; // Obrigatório se nível superior (validação no service)
+    
+    private String cargoDesejado;
+    
+    private BigDecimal pretensaoSalarial;
+    
+    private Boolean disponibilidadeMudanca = false;
+    
+    private Boolean disponibilidadeViagem = false;
+    
     @Size(max = 15, message = "Máximo de 15 cursos complementares")
     @Valid
     private List<CursoComplementarDTO> cursosComplementares = new ArrayList<>();
@@ -37,6 +48,9 @@ public class CurriculoRequestDTO {
     @NotEmpty(message = "Pelo menos uma skill é obrigatória")
     @Valid
     private List<SkillDTO> skills = new ArrayList<>();
+    
+    @Valid
+    private List<ExperienciaDTO> experiencias = new ArrayList<>();
     
     @Data
     public static class CursoComplementarDTO {
@@ -63,5 +77,22 @@ public class CurriculoRequestDTO {
         @NotBlank(message = "Nível da skill é obrigatório")
         private String nivel;
     }
+    
+    @Data
+    public static class ExperienciaDTO {
+        @NotBlank(message = "Cargo é obrigatório")
+        private String cargo;
+        
+        @NotBlank(message = "Empresa é obrigatória")
+        private String empresa;
+        
+        @NotNull(message = "Data de início é obrigatória")
+        private LocalDate dataInicio;
+        
+        private LocalDate dataFim;
+        
+        private Boolean atualmente = false;
+        
+        private String descricao;
+    }
 }
-

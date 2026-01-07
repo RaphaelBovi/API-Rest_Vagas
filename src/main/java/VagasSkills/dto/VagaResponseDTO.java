@@ -1,34 +1,32 @@
 package VagasSkills.dto;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
+import java.math.BigDecimal;
+import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 @Data
 public class VagaResponseDTO {
     
-    @JsonProperty("title")
+    private Long id;
     private String titulo;
-    
-    @JsonProperty("description")
-    private String descricao;
-    
-    @JsonProperty("company")
-    private String empresa;
-    
-    @JsonProperty("location")
+    private EmpresaDTO empresa;
     private String localizacao;
-    
-    @JsonProperty("salary_min")
-    private Double salarioMinimo;
-    
-    @JsonProperty("salary_max")
-    private Double salarioMaximo;
-    
-    @JsonProperty("created")
-    private String dataCriacao;
-    
-    @JsonProperty("redirect_url")
+    private BigDecimal salario;
+    private String modalidade;
+    private String tipoContrato;
+    private String nivelExperiencia;
+    private String descricao;
+    private List<String> requisitos = new ArrayList<>();
+    private List<String> beneficios = new ArrayList<>();
+    private LocalDateTime dataPublicacao;
+    private Boolean destaque;
     private String url;
+    
+    @Data
+    public static class EmpresaDTO {
+        private Long id;
+        private String nome;
+    }
 }
-
-
