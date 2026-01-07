@@ -81,3 +81,5 @@ Após o deploy, você pode verificar se as tabelas foram criadas:
 - Confirme que o perfil `prod` está ativo
 - Verifique se há erros de permissão no banco de dados
 
+
+

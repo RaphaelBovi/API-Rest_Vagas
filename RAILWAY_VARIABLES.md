@@ -48,3 +48,5 @@ Ou use a variável completa:
 - O perfil `prod` está ativo para usar `application-prod.yml`
 - `DDL_AUTO=update` garante que as tabelas sejam criadas automaticamente
 
+
+
